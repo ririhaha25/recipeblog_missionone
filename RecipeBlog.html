@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Kitchen</title>
+
+    <style>
+        nav > ul {
+          display: flex;
+          justify-content: flex-end;
+          margin: 20px;
+          padding: 0;
+        }
+
+        /* to remove blue and underline */
+        nav a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn {
+            background-color: green;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+
+        .nav-link {
+            list-style: none;
+            margin: 2px 4px;
+            padding: 8px 16px;
+        }
+
+        .nav-link:hover {
+            background-color: greenyellow;
+            color: white;
+            cursor: pointer;
+        }
+
+        main {
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          max-width: 800px;
+          margin: auto;
+          padding: 20px;
+        }
+
+        article {
+          margin-bottom: 40px;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 20px;
+        }
+
+        h2 {
+          margin: 10px 0;
+        }
+
+        p {
+          text-align: justify;
+          margin: 10px 0;
+        }
+
+        h5 {
+          color: #ccc;
+          font-style: italic;
+        }
+
+        .recipe-img {
+          width: 100%;
+          max-height: 600px;
+          object-fit: cover;
+          border-radius: 8px;
+          margin-bottom: 10px;
+        }
+        
+        /* initially hide the recipe content when checkbox is unchecked */
+        .toggle-recipe ~ .recipe-content {
+          display: none;
+        }
+
+        /* show the recipe content when checkbox is checked - 'uncheck' box to hide receipe content again */
+        .toggle-recipe:checked ~ .recipe-content {
+          display: block;
+        }
+
+        .full.recipe {
+          display: inline-block;
+          margin: 10px 0;
+          padding: 8px 16px;
+          background-color: green;
+          color: white;
+          text-decoration: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        .full.recipe:hover {
+          background-color: greenyellow;
+        }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <a href="RecipeBlog.html">
+            <li class="btn nav-link">Recipes</li></a>
+          <a href="SubmitRecipe.html">
+            <li class="btn nav-link">Submit a Recipe</li></a>
+        </ul>
+      </nav>
+    </header>
+
+  <main>
+    <article>
+      <img src="images/kiwi-rollup.png" alt="Kiwifruit Rollup" class="recipe-img" />
+      <h2>Kiwifruit Rollup</h2>
+      <p>A kiwiana take on a lunchbox classic!</p>
+
+      <!-- without JavaScript - use a hidden checkbox to toggle recipe -->
+      <input type="checkbox" id="kiwi-toggle" class="toggle-recipe" hidden />
+      <label for="kiwi-toggle" class="full recipe">Get Recipe</label>
+      
+      <!-- This section will be shown/hidden -->
+      <div class="recipe-content">
+        <h3>Ingredients</h3>
+        <p>4 Kiwifruit</p>
+        <p>1 Juiced Lime</p>
+        <p>60 grams sugar</p>
+      
+        <h3>Method</h3>
+        <p>1. Peel and dice the kiwifruit. Put into a food processor and process until smooth. Strain the juice through a fine mesh sieve and reserve the purée.</p>
+        <p>2. Add the lime juice and sugar to the kiwifruit purée, stir until smooth. Pour the purée onto an oven tray lined with parchment paper and spread evenly. It should be about 5mm thick.</p>
+        <p>3. Bake in a preheated oven at 80°C for 3 hours or until dry.</p>
+        <p>4. Remove from the oven, leave to cool, and cut into strips with the parchment paper. Roll up and serve.</p>
+        <h5>Recipe by Zespri</h5>
+      </div>
+    </article>
+
+    <article>
+      <img src="images/potato-savoury.png" alt="Potato Savoury" class="recipe-img" />
+      <h2>Potato Savoury</h2>
+      <p>A tasty, crispy snack that's great for a potluck.</p>
+      
+      <!-- Without JavaScript - use hidden checkbox to toggle recipe -->
+      <input type="checkbox" id="potato-toggle" class="toggle-recipe" hidden />
+      <label for="potato-toggle" class="full recipe">Get Recipe</label>
+      
+      <!-- This section will be shown/hidden -->
+      <div class="recipe-content">
+      <h3>Ingredients</h3>
+      <p>150 grams butter</p>
+      <p>1/2 Cup Milk</p>
+      <p>1 Cup Grated Cheese</p>
+      <p>21 Slices of Bread (1 Loaf)</p>
+      <p>5 Large Potatoes</p>
+      <p>1 Onion</p>
+      <p>2 tbsp Brown Sugar</p>
+      
+      <h3>Method</h3>
+      <p>1. Preheat oven to 180°C.</p>
+      <p>2. Soften 100 grams of your butter and then butter both sides of your bread slices. Cut buttered bread slices into circles using a cookie cutter or a jar.</p>
+      <p>3. Lightly spray a muffin tray and press bread slices into the muffiin tray. Then toast in oven for 10 minutes or until golden brown.</p>
+      <p>4. Peel and quarter pototoes. Then Boil for 20 minutes or until soft.</p>
+      <p>5. Dice onion and caramelise in a fry pan with 25 grams of buttter and brown sugar until onions are transulant.</p>
+      <p>6. Once potatos are cooked, drain the water from pot and add 25 grams of butter. Then start mashing potatoes and add 1/4 milk as you go.</p>
+      <p>7. After you've mashed your potatoes, mix in the caramelised onions and season with salt and pepper.</p>
+      <p>8. Once your bread cases have cooled, spoon the mashed potateo filling into the bread cases and top with grated cheese.</p>
+      <p>9. Put filled bread cases into the oven and bake for 15 minutes or until golden brown.</p>
+      <h5>Recipe by Love Food Hate Waste</h5>
+    </article>
+    </main>
+  </body>
+</html>
