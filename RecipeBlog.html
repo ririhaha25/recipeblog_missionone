@@ -1,45 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Kitchen</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookbook</title>
 
+    <!-- Googe Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
     <style>
-        nav > ul {
-          display: flex;
-          justify-content: flex-end;
-          margin: 20px;
-          padding: 0;
-        }
+      body {
+        margin: 10px;
+        padding: 10px;
+        background-color: #f6f9f0;
+      }
 
-        /* to remove blue and underline */
-        nav a {
-            text-decoration: none;
-            color: inherit;
-        }
+      /* header menu */
+      .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 100px;
+        gap: 20px;
+      }
 
-        .btn {
-            background-color: green;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: white;
-            text-align: center;
-            font-size: 16px;
-            border-radius: 4px;
-        }
+      .nav-list a {
+        display: block;
+        background-color: green;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-family: "lato";
+        font-size: 20px;
+        padding: 8px 16px;
+        border-radius: 40px;
+        cursor: pointer;
+      }
 
-        .nav-link {
-            list-style: none;
-            margin: 2px 4px;
-            padding: 8px 16px;
-        }
+      .nav-list a:hover {
+        background-color: yellowgreen;
+        cursor: pointer;
+      }
 
-        .nav-link:hover {
-            background-color: greenyellow;
-            color: white;
-            cursor: pointer;
-        }
+      /* Table of Contents Filer */
+      #table-of-contents button {
+        display: inline;
+        margin: 10px 5px;
+        padding: 8px 16px;
+        background-color: #fff7ea;
+        color: #aaaaaa;
+        font-family: "lato";
+        font-size: 15px;
+        text-decoration: none;
+        border: #fb6107 solid 1px;
+        border-radius: 40px;
+        cursor: pointer;
+      }
 
+      /* Recipes */
         main {
           font-family: Verdana, Geneva, Tahoma, sans-serif;
           max-width: 800px;
@@ -53,12 +78,14 @@
           padding-bottom: 20px;
         }
 
-        h2 {
-          margin: 10px 0;
-        }
+        h1 {
+        font-family: "caveat brush";
+        font-size: 50px;
+        color: green;
+        text-align: center;
+      }
 
-        p {
-          text-align: justify;
+        h2, h3 {
           margin: 10px 0;
         }
 
@@ -67,6 +94,11 @@
           font-style: italic;
         }
 
+        p {
+          text-align: justify;
+          margin: 10px 0;
+        }
+        
         .recipe-img {
           width: 100%;
           max-height: 600px;
@@ -74,7 +106,7 @@
           border-radius: 8px;
           margin-bottom: 10px;
         }
-        
+
         /* initially hide the recipe content when checkbox is unchecked */
         .toggle-recipe ~ .recipe-content {
           display: none;
@@ -105,16 +137,29 @@
   <body>
     <header>
       <nav>
-        <ul>
-          <a href="RecipeBlog.html">
-            <li class="btn nav-link">Recipes</li></a>
-          <a href="SubmitRecipe.html">
-            <li class="btn nav-link">Submit a Recipe</li></a>
+        <ul class="nav-list">
+          <li><a class="btn nav-link" href="RecipeBlog.html">Recipes</a></li>
+          <li>
+            <a class="btn nav-link" href="SubmitRecipe.html">Submit Recipe</a>
+          </li>
         </ul>
       </nav>
     </header>
 
-  <main>
+    <div id="table-of-contents">
+      <button data-category="All">All</button>
+      <button data-category="Snack">Snack</button>
+      <button data-category="Soup">Soup</button>
+      <button data-category="Salad">Salad</button>
+      <button data-category="Sides">Sides</button>
+      <button data-category="Dessert">Dessert</button>
+      <button data-category="Breakfast">Breakfast</button>
+      <button data-category="Lunch">Lunch</button>
+      <button data-category="Dinner">Dinner</button>
+    </div>
+    <h1 id="category-title">All Recipes</h1>
+
+<main>
     <article>
       <img src="images/kiwi-rollup.png" alt="Kiwifruit Rollup" class="recipe-img" />
       <h2>Kiwifruit Rollup</h2>

@@ -1,136 +1,164 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Community Kitchen</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookbook</title>
 
-        <style>
-        nav > ul {
-            display: flex;
-            justify-content: flex-end;
-            margin: 20px;
-            padding: 0;
-        }
+    <!-- Googe Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-        /* to remove blue and underline */
-        nav a {
-            text-decoration: none;
-            color: inherit;
-        }
+    <!-- Styles -->
+    <style>
+      body {
+        margin: 10px;
+        padding: 10px;
+        background-color: #f6f9f0;
+      }
 
-        .btn {
-            background-color: green;
-            color: white;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            text-align: center;
-            font-size: 16px;
-            border-radius: 4px;
-        }
+      /* header menu */
+      .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 100px;
+        gap: 20px;
+      }
 
-        .nav-link {
-            list-style: none;
-            margin: 2px 4px;
-            padding: 8px 16px;
-        }
+      .nav-list a {
+        display: block;
+        background-color: green;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-family: "lato";
+        font-size: 20px;
+        padding: 8px 16px;
+        border-radius: 40px;
+        cursor: pointer;
+      }
 
-        .nav-link:hover {
-            background-color: greenyellow;
-            color: white;
-            cursor: pointer;
-        }
+      .nav-list a:hover {
+        background-color: yellowgreen;
+        cursor: pointer;
+      }
 
-        h3 {
-            color: green;
-        }
+      h3 {
+        color: green;
+      }
 
-        form {
-            padding: 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+      form {
+        padding: 20px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
 
-        fieldset {
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            margin: 30px;
-            padding: 10px;
-        }
+      fieldset {
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        margin: 30px;
+        padding: 10px;
+      }
 
-        label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-        }
+      label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
 
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 8px;
-            margin: 6px 0;
-            border: 1px solid #999;
-            border-radius: 4px;
-            font-size: 14px;
-        }
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 6px 0;
+        border: 1px solid #999;
+        border-radius: 4px;
+        font-size: 14px;
+      }
 
-        textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
 
-        input[type="submit"] {
-            margin-top: 20px;
-            background-color: green;
-            color: white;
-            padding: 10px;
-            width: 40%;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+      input[type="submit"] {
+        margin-top: 20px;
+        background-color: green;
+        color: white;
+        padding: 10px;
+        width: 40%;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+      }
 
-        input[type="submit"]:hover {
-            background-color: greenyellow;
-        }
-        </style>
+      input[type="submit"]:hover {
+        background-color: greenyellow;
+      }
+    </style>
+  </head>
 
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <a href="RecipeBlog.html">
-                        <li class="btn nav-link">Recipes</li></a>
-                    <a href="SubmitRecipe.html">
-                        <li class="btn nav-link">Submit a Recipe</li></a>
-                </ul>
-            </nav>
-        </header>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-list">
+          <li><a class="btn nav-link" href="RecipeBlog.html">Recipes</a></li>
+          <li>
+            <a class="btn nav-link" href="SubmitRecipe.html">Submit Recipe</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-        <main>
-            <fieldset>
-                <form action="mailto:ritajesshardstaff05@gmail.com" method="post" enctype="text/plain">
-                    <h3>Contact Information</h3>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+    <main>
+      <fieldset>
+        <form
+          action="mailto:ritajesshardstaff05@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <h3>Contact Information</h3>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
 
-                    <h3>Recipe Information</h3>
-                    <label for="recipe-name">Recipe Name:</label>
-                    <textarea id="recipe-name" name="recipe-name" placeholder="Type your recipe name here..." required></textarea>
+          <h3>Recipe Information</h3>
+          <label for="recipe-name">Recipe Name:</label>
+          <textarea
+            id="recipe-name"
+            name="recipe-name"
+            placeholder="Type your recipe name here..."
+            required
+          ></textarea>
 
-                    <label for="ingredients">Ingredients:</label>
-                    <textarea id="ingredients" name="ingredients" placeholder="Type your recipe ingredients here..." required></textarea>
+          <label for="ingredients">Ingredients:</label>
+          <textarea
+            id="ingredients"
+            name="ingredients"
+            placeholder="Type your recipe ingredients here..."
+            required
+          ></textarea>
 
-                    <label for="method">Method:</label>
-                    <textarea id="method" name="method" placeholder="Type your recipe method here..." required></textarea>
+          <label for="method">Method:</label>
+          <textarea
+            id="method"
+            name="method"
+            placeholder="Type your recipe method here..."
+            required
+          ></textarea>
 
-                    <input type="submit" value="Submit Recipe">
-                </form>
-            </fieldset>
-        </main>
-    </body>
+          <input type="submit" value="Submit Recipe" />
+        </form>
+      </fieldset>
+    </main>
+  </body>
 </html>

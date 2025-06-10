@@ -1,206 +1,223 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Community Kitchen</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Kitchen</title>
 
-        <style>
-            /* Reset default margin and padding */
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-            }
+    <style>
+      body {
+        margin: 10px;
+        padding: 10px;
+        background-color: #f6f9f0;
+      }
 
-            body {
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-            }
+      /* header menu */
+      .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 100px;
+        gap: 20px;
+      }
 
-            header {
-                position: relative;
-                z-index: 1; /* to ensure nav menu is above background */
-            }
+      .nav-list a {
+        display: block;
+        background-color: green;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-family: "lato";
+        font-size: 20px;
+        padding: 8px 16px;
+        border-radius: 40px;
+        cursor: pointer;
+      }
 
-            nav > ul {
-                display: flex;
-                justify-content: flex-end;
-                margin: 20px;
-                padding: 0;
-            }
-            
-            /* to remove blue and underline */
-            nav a {
-                text-decoration: none;
-                color: inherit;
-            }
+      .nav-list a:hover {
+        background-color: greenyellow;
+        cursor: pointer;
+      }
 
-            .btn {
-                background-color: green;
-                color: white;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                text-align: center;
-                font-size: 16px;
-                border-radius: 4px;
-            }
+      .welcome-box-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: green;
+        overflow: hidden;
+      }
 
-            .nav-link {
-                list-style: none;
-                margin: 2px 4px;
-                padding: 8px 16px;
-            }
+      /* Background Image with 80% Opacity - using ::before pseudo-element allows you to dim just the background image while keeping the content in the welcome box container fully visible  */
+      .welcome-box-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url(images/produce-1.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.8;
+        z-index: -1;
+      }
 
-            .nav-link:hover {
-                background-color: greenyellow;
-                color: white;
-                cursor: pointer;
-            }
+      /* Welcome Text Animation */
+      .welcome-text span {
+        display: inline-block;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 60px;
+        color: white;
+        justify-content: center;
+        animation: wave 2s ease-in-out infinite;
+      }
 
-            .welcome-box-container {
-                position: relative;
-                width: 100vw;
-                height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                color: green;
-                overflow: hidden;
-            }
-            
-            /* Background Image with 80% Opacity - using ::before pseudo-element allows you to dim just the background image while keeping the content in the welcome box container fully visible  */
-            .welcome-box-container::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                background-image: url(images/produce-1.jpg);
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                opacity: 0.8;
-                z-index: -1;
-            }
+      /* applying different start times to each letters, producing a flowing "wave" effect - 0.2 seconds between each letter */
+      .welcome-text span:nth-child(1) {
+        /* W */
+        animation-delay: 0.2s;
+      }
+      .welcome-text span:nth-child(2) {
+        /* E */
+        animation-delay: 0.4s;
+      }
+      .welcome-text span:nth-child(3) {
+        /* L */
+        animation-delay: 0.6s;
+      }
+      .welcome-text span:nth-child(4) {
+        /* C */
+        animation-delay: 0.8s;
+      }
+      .welcome-text span:nth-child(5) {
+        /* O */
+        animation-delay: 1s;
+      }
+      .welcome-text span:nth-child(6) {
+        /* M */
+        animation-delay: 0.2s;
+      }
+      .welcome-text span:nth-child(7) {
+        /* E */
+        animation-delay: 0.4s;
+      }
+      .welcome-text span:nth-child(8) {
+        /* T */
+        animation-delay: 0.6s;
+      }
+      .welcome-text span:nth-child(9) {
+        /* O */
+        animation-delay: 0.8s;
+      }
+      .welcome-text span:nth-child(10) {
+        /* C */
+        animation-delay: 1s;
+      }
+      .welcome-text span:nth-child(11) {
+        /* O */
+        animation-delay: 0.2s;
+      }
+      .welcome-text span:nth-child(12) {
+        /* M */
+        animation-delay: 0.4s;
+      }
+      .welcome-text span:nth-child(13) {
+        /* M */
+        animation-delay: 0.6s;
+      }
+      .welcome-text span:nth-child(14) {
+        /* U */
+        animation-delay: 0.8s;
+      }
+      .welcome-text span:nth-child(15) {
+        /* N */
+        animation-delay: 1s;
+      }
+      .welcome-text span:nth-child(16) {
+        /* I */
+        animation-delay: 0.2s;
+      }
+      .welcome-text span:nth-child(17) {
+        /* T */
+        animation-delay: 0.4s;
+      }
+      .welcome-text span:nth-child(18) {
+        /* Y */
+        animation-delay: 0.6s;
+      }
+      .welcome-text span:nth-child(19) {
+        /* K */
+        animation-delay: 0.8s;
+      }
+      .welcome-text span:nth-child(20) {
+        /* I */
+        animation-delay: 1s;
+      }
+      .welcome-text span:nth-child(21) {
+        /* T */
+        animation-delay: 0.2s;
+      }
+      .welcome-text span:nth-child(22) {
+        /* C */
+        animation-delay: 0.4s;
+      }
+      .welcome-text span:nth-child(23) {
+        /* H */
+        animation-delay: 0.6s;
+      }
+      .welcome-text span:nth-child(24) {
+        /* E */
+        animation-delay: 0.8s;
+      }
+      .welcome-text span:nth-child(25) {
+        /* N */
+        animation-delay: 1s;
+      }
+      /* defines motion of animation - repositioning an element along the y axis to create 'bounce' effect */
+      @keyframes wave {
+        0%,
+        100% {
+          transform: translateY(
+            0
+          ); /* 0% and 100% = letter in original position */
+        }
+        50% {
+          transform: translateY(
+            -15px
+          ); /* 0% and 100% = letter moves 15 pixels on Y axis */
+        }
+      }
+    </style>
+  </head>
 
-            /* Welcome Text Animation */
-            .welcome-text span {
-                display: inline-block;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-size: 60px;
-                color: white;
-                justify-content: center;
-                animation: wave 2s ease-in-out infinite;
-            }
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-list">
+          <li><a class="btn nav-link" href="RecipeBlog.html">Recipes</a></li>
+          <li>
+            <a class="btn nav-link" href="SubmitRecipe.html">Submit Recipe</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-            /* applying different start times to each letters, producing a flowing "wave" effect - 0.2 seconds between each letter */
-            .welcome-text span:nth-child(1) { /* W */
-                animation-delay: 0.2s;
-            }
-            .welcome-text span:nth-child(2) { /* E */
-                animation-delay: 0.4s;
-            }
-            .welcome-text span:nth-child(3) { /* L */
-                animation-delay: 0.6s;
-            }
-            .welcome-text span:nth-child(4) { /* C */
-                animation-delay: 0.8s;
-            }
-            .welcome-text span:nth-child(5) { /* O */
-                animation-delay: 1s;
-            }
-            .welcome-text span:nth-child(6) { /* M */
-                animation-delay: 0.2s;
-            }
-            .welcome-text span:nth-child(7) { /* E */
-                animation-delay: 0.4s;
-            }
-            .welcome-text span:nth-child(8) { /* T */
-                animation-delay: 0.6s;
-            }
-            .welcome-text span:nth-child(9) { /* O */
-                animation-delay: 0.8s;
-            }
-            .welcome-text span:nth-child(10) { /* C */
-                animation-delay: 1s;
-            }
-            .welcome-text span:nth-child(11) { /* O */
-                animation-delay: 0.2s;
-            }
-            .welcome-text span:nth-child(12) { /* M */
-                animation-delay: 0.4s;
-            }
-            .welcome-text span:nth-child(13) { /* M */
-                animation-delay: 0.6s;
-            }
-            .welcome-text span:nth-child(14) { /* U */
-                animation-delay: 0.8s;
-            }
-            .welcome-text span:nth-child(15) { /* N */
-                animation-delay: 1s;
-            }
-            .welcome-text span:nth-child(16) { /* I */
-                animation-delay: 0.2s;
-            }
-            .welcome-text span:nth-child(17) { /* T */
-                animation-delay: 0.4s;
-            }
-            .welcome-text span:nth-child(18) { /* Y */
-                animation-delay: 0.6s;
-            }
-            .welcome-text span:nth-child(19) { /* K */
-                animation-delay: 0.8s;
-            }
-            .welcome-text span:nth-child(20) { /* I */
-                animation-delay: 1s;
-            }
-            .welcome-text span:nth-child(21) { /* T */
-                animation-delay: 0.2s;
-            }
-            .welcome-text span:nth-child(22) { /* C */
-                animation-delay: 0.4s;
-            }
-            .welcome-text span:nth-child(23) { /* H */
-                animation-delay: 0.6s;
-            }
-            .welcome-text span:nth-child(24) { /* E */
-                animation-delay: 0.8s;
-            }
-            .welcome-text span:nth-child(25) { /* N */
-                animation-delay: 1s;
-            }
-            /* defines motion of animation - repositioning an element along the y axis to create 'bounce' effect */
-            @keyframes wave {
-                0%, 100% {
-                    transform: translateY(0); /* 0% and 100% = letter in original position */
-                }
-                50% {
-                    transform: translateY(-15px); /* 0% and 100% = letter moves 15 pixels on Y axis */
-                }
-            }
-        </style>
-
-    </head>
-
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <a href="RecipeBlog.html">
-                        <li class="btn nav-link">Recipes</li></a>
-                    <a href="SubmitRecipe.html">
-                        <li class="btn nav-link">Submit a Recipe</li></a>
-                </ul>
-            </nav>
-        </header>
-
-        <!-- use span tag so an animation can be applied to each letter -->
-        <div class="welcome-box-container">
-            <h1 class="welcome-text">
-                <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span> &nbsp; <span>t</span><span>o</span> <br>
-                <span>C</span><span>o</span><span>m</span><span>m</span><span>u</span><span>n</span><span>i</span><span>t</span><span>y</span> &nbsp; <span>K</span><span>i</span><span>t</span><span>c</span><span>h</span><span>e</span><span>n</span>
-            </h1>
-        </div>
-    </body>
+    <!-- use span tag so an animation can be applied to each letter -->
+    <div class="welcome-box-container">
+      <h1 class="welcome-text">
+        <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span
+        ><span>m</span><span>e</span> &nbsp; <span>t</span><span>o</span> <br />
+        <span>C</span><span>o</span><span>m</span><span>m</span><span>u</span
+        ><span>n</span><span>i</span><span>t</span><span>y</span> &nbsp;
+        <span>K</span><span>i</span><span>t</span><span>c</span><span>h</span
+        ><span>e</span><span>n</span>
+      </h1>
+    </div>
+  </body>
 </html>
